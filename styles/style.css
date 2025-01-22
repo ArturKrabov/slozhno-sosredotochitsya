@@ -1,5 +1,289 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+.header {
+  display: grid;
+  position: relative;
+  grid-template-rows: minmax(320px, 1fr) 130px minmax(300px, 1fr);
+  /* min-height: 100vh; */
+
+  background-image: var(--background-img);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* padding-block-start: 20px;
+  padding-block-end: 20px;
+  padding-inline-end: 20px;
+  padding-inline-start: 20px; */
+}
+
+.decorated-zone::before {
+  content: "REC";
+  color: #ff0070;
+  position: absolute;
+  inset-inline-end: 5px;
+  inset-block-start: 20px;
+  background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle fill="%23FF0070" filter="drop-shadow(0px 0px 4px %23FF0070)" cx="50" cy="50" r="42" /></svg>');
+  padding-right: 22px;
+  background-position: center right;
+  background-size: 18px;
+  background-repeat: no-repeat;
+
+  font-family: "IBM Plex Mono", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+
+  filter: drop-shadow(0px 0px 4px #ff0070);
+}
+
+/* .small_cam {
+  position: absolute;
+  inset-inline-end: 20px;
+  inset-block-start: 20px;
+}
+
+.small_cam::before {
+  content: "REC";
+  font-family: "IBM Plex Mono", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+
+  color: #ff0070;
+}
+
+.small_cam::after {
+  content: "";
+  background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle fill="%23FF0070" filter="drop-shadow(0px 0px 4px %23FF0070)" cx="50" cy="50" r="42" /></svg>');
+  background-position: center;
+  background-size: 18px;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+} */
+
+.header__theme-menu {
+  padding-block-start: 20px;
+  padding-inline-start: 20px;
+
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.header__theme-menu-list {
+  justify-self: center;
+
+  display: flex;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  font-family: "IBM Plex Mono", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+
+  color: var(--subject-title);
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  outline: 2px solid var(--subject-title);
+}
+
+.title {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  line-height: 82.5%;
+
+  color: var(--title-color);
+
+  text-shadow: 4px 4px 0px #ff0070;
+}
+
+.header__paragraph {
+  align-self: center;
+  justify-self: end;
+
+  max-width: 491px;
+
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+
+  color: #000028;
+
+  background-color: var(--accent-color);
+}
+
+.subject {
+  margin-block-start: 60px;
+  margin-block-end: 80px;
+  padding-inline-start: 20px;
+}
+
+.subject-block {
+  display: grid;
+  font-family: "IBM Plex Mono", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.subject__subtitle {
+  font-weight: 700;
+  color: #000028;
+  background-color: var(--accent-color);
+
+  margin-block-end: 10px;
+}
+
+.subject-block:nth-child(1) {
+  grid-template-columns: 1fr 2fr;
+}
+
+.subject-block:nth-child(1) > .subject-block__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.subject-block:nth-child(2) {
+  grid-template-rows: auto auto;
+
+  margin-block-start: 80px;
+  margin-block-end: 83px;
+}
+
+.subject-block:nth-child(2) > .subject-block__text {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.subject-block:nth-child(3) {
+  grid-template-columns: 1fr 2fr;
+}
+
+.subject-block:nth-child(3) > .subject-block__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.special__title {
+  font-family: "IBM Plex Mono", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000028;
+  background-color: var(--accent-color);
+  margin-block-end: 20px;
+}
+
+.subject-block:nth-child(3) > .subject-block__text > .special__title {
+  margin-block-end: 0;
+  margin-inline-start: 0;
+}
+
+.subject-block:nth-child(3)
+  > .subject-block__text
+  > .subject-block__text-item
+  > .subject__subtitle {
+  font-weight: 400;
+}
+
+.subject-block__title {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 700;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--subject-title);
+
+  margin-block-end: 20px;
+  max-width: 315px;
+}
+
+.gallery-area {
+  max-width: 1024px;
+}
+
+.subject__paragraph {
+  color: var(--p-color);
+}
+
+.img-1 {
+  grid-area: img-1;
+}
+
+.img-2 {
+  grid-area: img-2;
+}
+
+.img-3 {
+  grid-area: img-3;
+}
+
+.img-4 {
+  grid-area: img-4;
+}
+
+.img-5 {
+  grid-area: img-5;
+}
+
+.gallery-area {
+  margin-inline-start: 20px;
+}
+
+.gallery {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 260px 315px 428px;
+  grid-template-areas:
+    "img-1 img-1 img-4"
+    "img-2 img-3 img-4"
+    "img-2 img-5 img-5";
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.gallery img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.foot-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  min-height: 768px;
+}
+
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-image: var(--background-img);
+  background-position: center;
+  background-attachment: fixed;
+
+  padding-inline-end: 20px;
+  max-width: 1024px;
+  border: 1px solid white;
 }
